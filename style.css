@@ -1,0 +1,62 @@
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body.not-authenticated .role-logged-in {
+    display: none;
+}
+
+body.authenticated .role-logged-out {
+    display: none;
+}
+
+.role-admin {
+    display: none;
+}
+
+body.is-admin .role-admin {
+    display: block;
+}
+
+
+.note-box {
+    background-color: #d1f7fe;
+    border: 1px solid #b2ebf2;
+    color: #006064;
+}
+
+.code-highlight {
+    color: #e91e63;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+.list-styled li {
+    font-size: 1.05rem;
+    color: #333;
+}
+
+
+.table td {
+    vertical-align: middle;
+}
+
+
+.verified-check {
+    color: white;
+    background-color: #198754;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
