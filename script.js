@@ -1,4 +1,4 @@
-const STORAGE_KEY = "ipt_demo_v2";
+const STORAGE_KEY = "ipt_demo_v1";
 let currentUser = null;
 
 let isEditingEmployee = false;
@@ -250,7 +250,6 @@ function saveProfile(e) {
     setAuthState(true, currentUser);
 }
 
-
 let requestItems = [];
 
 function renderRequests() {
@@ -305,7 +304,12 @@ function renderRequestModal() {
                     <div class="modal-body">
                         <div class="mb-3">
                             <label class="form-label">Type</label>
-                            <input id="reqType" class="form-control" placeholder="Equipment">
+                            <select id="reqType" class="form-select">
+                                <option value="" disabled selected>Select Type...</option>
+                                <option value="Equipment">Equipment</option>
+                                <option value="Leave">Leave</option>
+                                <option value="Resources">Resources</option>
+                            </select>
                         </div>
 
                         <label class="form-label">Items</label>
@@ -435,7 +439,7 @@ function renderAccounts() {
                             <td>${acc.verified ? '<span class="verified-check">✓</span>' : '<span class="text-muted">No</span>'}</td>
                             <td>
                                 <button class="btn btn-sm btn-outline-primary me-1" onclick="editAccount('${acc.email}')"><strong>Edit</strong></button>
-                                <button class="btn btn-sm btn-outline-warning me-1" onclick="alert('Reset Password logic here')"><strong>Reset Password</strong></button>
+                                <button class="btn btn-sm btn-outline-warning me-1" onclick="alert(' new password (min 6 chars)')"><strong>Reset Password</strong></button>
                                 <button class="btn btn-sm btn-outline-danger" onclick="deleteAccount('${acc.email}')"><strong>Delete</strong</button>
                             </td>
                         </tr>
